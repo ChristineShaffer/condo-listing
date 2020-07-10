@@ -227,7 +227,7 @@
             <div class="col-12 mb-3">
                 <h2>Contact</h2>
                 <p>Please phone Christine at <a href="tel:7809843080">(780) 984-3080</a> or use the form below.</p>
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation hideable" novalidate>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter name">
@@ -253,6 +253,13 @@
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <div class="alert-success p-5 my-3" id="success">
+                    Form successfully submitted! We will be in touch soon.
+                </div>
+            </div>
+
+            <div class="col-12 my-3 text-muted" id="copyright">
+                Copyright © 2020 Christine Shaffer. All rights reserved.
             </div>
         </div>
     </div>
@@ -310,7 +317,8 @@
                                 message: document.getElementById("message").value,
                                 created: firebase.firestore.Timestamp.now()
                             }).then(function () {
-                                alert("Form successfully submitted! We will be in touch soon.");
+                                $(".hideable").hide();
+                                $("#success").show();
                             }).catch(function () {
                                 alert("Sorry, something went wrong.");
                                 submit.disabled = false;
