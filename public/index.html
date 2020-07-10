@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="assets/css/index.css">
 
     <title>3 Perron Street Condo For Sale</title>
-    <meta name="description" content="One bedroom + den, 1.5 bathroom top floor condo for sale at 3 Perron Street in
-        downtown St. Albert, Alberta.">
+    <meta name="description" content="Bright, top floor downtown St. Albert condo for sale. One bedroom + den, 1.5
+        bathroom condo located at 3 Perron Street.">
 </head>
 <body>
     <div id="header">
@@ -208,7 +208,8 @@
                     <li><a href="./referral">Submit a referral</a></li>
                     <li>
                         Share this page with them!
-                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="share-buttons">
+                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="share-buttons"
+                             data-a2a-url="https://downtowndeal.ca">
                             <a class="a2a_button_copy_link"></a>
                             <a class="a2a_button_sms"></a>
                             <a class="a2a_button_whatsapp"></a>
@@ -250,7 +251,7 @@
                             Please enter a message.
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
@@ -299,6 +300,10 @@
                         if (form.checkValidity() === false) {
                             event.stopPropagation();
                         } else {
+                            // Disable submit button
+                            const submit = document.getElementById("submit");
+                            submit.disabled = true;
+
                             firebase.firestore().collection("messages").add({
                                 name: document.getElementById("name").value,
                                 email: document.getElementById("email").value,
@@ -308,6 +313,7 @@
                                 alert("Form successfully submitted! We will be in touch soon.");
                             }).catch(function () {
                                 alert("Sorry, something went wrong.");
+                                submit.disabled = false;
                             });
                         }
 

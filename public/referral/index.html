@@ -10,9 +10,9 @@
 
     <link rel="stylesheet" href="../assets/css/index.css">
 
-    <title>Refer to Earn $1,000</title>
-
-    <meta name="description" content="Refer someone to purchase this condo and get $1,000 on closing.">
+    <title>Earn $1,000 Just for Referring a Buyer</title>
+    <meta name="description" content="Submit a record of your referral using this form to receive $1,000 on closing if
+        your referral ends up purchasing.">
 </head>
 <body>
     <div class="container">
@@ -20,19 +20,20 @@
             <div class="col-12 my-3">
                 <h1>$1,000 Referral Incentive</h1>
             </div>
-            <div class="col-12">
+            <div class="col-12 hideable">
                 <p>
-                    Submit a referral using the form below get $1,000 if your referral ends up purchasing this unit!
+                    Submit a record of your referral using the form below and receive $1,000 on closing if your
+                    referral ends up purchasing!
                 </p>
-                <p>
-                    All of your information and the information of the person your referring will be kept private
-                    and confidential. We will not contact your referral, we only use this information for reference
-                    purposes to award the $1,000.
+                <p class="font-weight-bold">
+                    All information entered here will be kept private and confidential. We will not contact your
+                    referral, we only use this information for reference purposes to award the $1,000.
                 </p>
             </div>
+
             <div class="col-12">
-                <form class="row needs-validation" novalidate>
-                    <div class="form-group col-12">
+                <form class="row needs-validation hideable" novalidate>
+                    <div class="form-group col-12 col-sm-6">
                         <label for="referrer-first-name">Your First Name</label>
                         <input type="text" class="form-control" id="referrer-first-name"
                                placeholder="Enter your first name" required>
@@ -41,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-12">
+                    <div class="form-group col-12 col-sm-6">
                         <label for="referrer-last-name">Your Last Name</label>
                         <input type="text" class="form-control" id="referrer-last-name"
                                placeholder="Enter your last name" required>
@@ -50,39 +51,33 @@
                         </div>
                     </div>
 
-                    <!--
-                    <div class="form-group col-12">
-                        <label for="referrer-birthday">Your Birthday (MM/DD/YYYY)</label>
-                        <input type="text" class="form-control" id="referrer-birthday" maxlength="10"
-                               placeholder="Enter your birthday" aria-describedby="birthday-help" required>
-                        <small id="email-help" class="form-text text-muted">
-                            We do not share this information, it is for verification purposes only.
-                        </small>
-                        <div class="invalid-feedback">
-                            Please enter your last name.
-                        </div>
-                    </div>
-                    -->
-
                     <div class="form-group col-12">
                         <label for="referrer-email">Your Email Address</label>
                         <input type="email" class="form-control" id="referrer-email" placeholder="Enter your email"
-                               required>
+                               aria-describedby="email-help" required>
                         <div class="invalid-feedback">
                             Please enter your email address.
                         </div>
+                        <small id="email-help" class="form-text text-muted">
+                            This is kept private and confidential, we use this only for verification purposes to award
+                            the $1,000.
+                        </small>
                     </div>
 
                     <div class="form-group col-12">
                         <label for="referrer-phone">Your Phone Number</label>
                         <input type="number" class="form-control" id="referrer-phone"
-                               placeholder="Enter your phone number" required>
+                               placeholder="Enter your phone number" required aria-describedby="phone-help">
                         <div class="invalid-feedback">
                             Please enter your phone number.
                         </div>
+                        <small id="phone-help" class="form-text text-muted">
+                            This is kept private and confidential, we use this only for verification purposes to award
+                            the $1,000.
+                        </small>
                     </div>
 
-                    <div class="form-group col-12">
+                    <div class="form-group col-12 col-sm-6">
                         <label for="referee-first-name">Referral's First Name</label>
                         <input type="text" class="form-control" id="referee-first-name"
                                placeholder="Enter the first name of the person you're referring" required>
@@ -91,7 +86,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-12">
+                    <div class="form-group col-12 col-sm-6">
                         <label for="referee-last-name">Referral's Last Name</label>
                         <input type="text" class="form-control" id="referee-last-name"
                                placeholder="Enter the last name of the person you're referring" required>
@@ -101,12 +96,17 @@
                     </div>
 
                     <div class="form-group col-12">
-                        <label for="referee-phone-or-email">Referral's Phone Number or Email</label>
+                        <label for="referee-phone-or-email">Referral's Phone Number or Email Address</label>
                         <input type="text" class="form-control" id="referee-phone-or-email"
+                               aria-describedby="refer-help"
                                placeholder="Enter the phone number or email of the person you're referring" required>
                         <div class="invalid-feedback">
                             Please enter your referral's phone number or email.
                         </div>
+                        <small id="refer-help" class="form-text text-muted">
+                            We will not contact your referral, this information is for verification purposes only to
+                            award the referral incentive.
+                        </small>
                     </div>
 
                     <div class="form-group col-12">
@@ -133,9 +133,28 @@
                     </div>
 
                     <div class="col-12 mt-3 mb-4">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
+            </div>
+
+            <div class="col-12" id="success">
+                <div class="alert-success p-5">
+                    <p>Your referral has been received. Please share this listing with your referral!</p>
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://downtowndeal.ca"
+                         data-a2a-title="3 Perron Street Condo For Sale">
+                        <a class="a2a_button_copy_link"></a>
+                        <a class="a2a_button_sms"></a>
+                        <a class="a2a_button_whatsapp"></a>
+                        <a class="a2a_button_facebook_messenger"></a>
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_email"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_wechat"></a>
+                        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                    </div>
+                </div>
+                <p class="mt-3"><a href="/">Back to Home</a></p>
             </div>
         </div>
     </div>
@@ -183,6 +202,10 @@
                         if (form.checkValidity() === false) {
                             event.stopPropagation();
                         } else {
+                            // Disable submit button
+                            const submit = document.getElementById("submit");
+                            submit.disabled = true;
+
                             firebase.firestore().collection("referrals").add({
                                 referrerFirstName: document.getElementById("referrer-first-name").value,
                                 referrerLastName: document.getElementById("referrer-last-name").value,
@@ -193,9 +216,11 @@
                                 phoneOrEmail: document.getElementById("referee-phone-or-email").value,
                                 created: firebase.firestore.Timestamp.now()
                             }).then(function () {
-                                alert("Form successfully submitted! Your referral has been recorded.");
+                                $(".hideable").hide();
+                                $("#success").show();
                             }).catch(function () {
                                 alert("Sorry, something went wrong.");
+                                submit.disabled = false;
                             });
                         }
 
@@ -205,5 +230,8 @@
             }, false);
         })();
     </script>
+
+    <!-- addtoany.com (Sharing) -->
+    <script src="https://static.addtoany.com/menu/page.js"></script>
 </body>
 </html>
