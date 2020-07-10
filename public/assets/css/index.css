@@ -1,0 +1,29 @@
+#header {
+    background-image: url("../img/header.png");
+    background-position: center;
+    background-size: cover;
+    text-shadow: 5px 5px 5px #000;
+    color: #FFF;
+}
+.carousel-item {
+    max-height: 500px;
+}
+.carousel-item h2, .carousel-item p {
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+}
+#share-buttons a {
+    margin-top: 0.5em;
+}
+#scroll-view-images img {
+    max-width: 100%;
+}
+@media (min-width: 768px) {
+    #scroll-view-images img {
+        max-width: 80%;
+    }
+}
+@media (min-width: 992px) {
+    #scroll-view-images img {
+        max-width: 50%;
+    }
+}
