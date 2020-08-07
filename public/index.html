@@ -23,6 +23,24 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1000" />
     <meta property="og:image:height" content="595" />
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3753499671332444');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=3753499671332444&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body>
     <div id="header">
@@ -251,11 +269,16 @@
 
             <div class="col-12 mb-3">
                 <h2>Contact</h2>
-                <p>Please phone Christine at <a href="tel:7809843080">(780) 984-3080</a> or use the form below.</p>
+                <p>
+                    Please phone Christine at
+                    <a href="tel:7809843080" onclick="fbq('trackCustom', 'PhoneNumberClick'); return true;">
+                        (780) 984-3080
+                    </a> or use the form below.
+                </p>
                 <form class="needs-validation hideable" novalidate>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter name">
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -344,6 +367,7 @@
                             }).then(function () {
                                 $(".hideable").hide();
                                 $("#success").show();
+                                fbq("track", "Contact");
                             }).catch(function () {
                                 alert("Sorry, something went wrong.");
                                 submit.disabled = false;
