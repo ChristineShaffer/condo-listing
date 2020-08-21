@@ -33,3 +33,11 @@
 #copyright {
     font-size: 10px;
 }
+#strikeout {
+    text-decoration: line-through;
+    color: red;
+}
+#reduced {
+    font-style: italic;
+    color: red;
+}
